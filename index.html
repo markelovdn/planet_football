@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Летний футбольный лагерь 'Планета футбола' для детей 2013-2016 г.р. в Волгоградской области. Профессиональные тренеры, 2 тренировки в день, товарищеские матчи.">
+    <meta name="keywords" content="футбольный лагерь, детский футбол, спортивный лагерь, Волгоград, Дубовка, футбольная школа">
+    <title>Футбольный лагерь "Планета футбола" | Лето 2026</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">⚽ Планета футбола</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#programs">Программы</a></li>
+                <li><a href="#features">Особенности</a></li>
+                <li><a href="#schedule">Расписание</a></li>
+                <li><a href="#trainers">Тренеры</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+            <div class="burger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Футбольный лагерь "Планета футбола"</h1>
+            <p class="hero-subtitle">Профессиональные тренировки для юных футболистов в живописной Волгоградской области</p>
+            <div class="hero-dates">📅 30 июня - 13 июля 2026</div>
+            <p style="margin-bottom: 2rem;">Для детей 2013-2016 г.р. • г. Дубовка, Волгоградская область</p>
+            <button class="cta-button" onclick="openModal()">Забронировать место</button>
+        </div>
+    </section>
+
+    <section class="section" id="programs">
+        <h2 class="section-title">Программы обучения</h2>
+        <div class="programs">
+            <div class="program-card">
+                <div class="program-icon">🎯</div>
+                <h3 class="program-title">Для начинающих</h3>
+                <p class="program-motto">"Учимся, играя"</p>
+                <p>Идеально для детей, которые только начинают свой путь в футболе. Базовые технические навыки, игровые упражнения и дружеская атмосфера.</p>
+                <ul style="margin-top: 1rem; text-align: left;">
+                    <li>✓ Основы техники владения мячом</li>
+                    <li>✓ Игры в малых составах</li>
+                    <li>✓ Индивидуальный подход</li>
+                    <li>✓ Позитивная мотивация</li>
+                </ul>
+            </div>
+
+            <div class="program-card">
+                <div class="program-icon">⭐</div>
+                <h3 class="program-title">Для продвинутых</h3>
+                <p class="program-motto">"Оттачиваем мастерство, понимаем игру"</p>
+                <p>Для детей, занимающихся в футбольных школах. Углубленная техника, тактическое мышление и товарищеские матчи.</p>
+                <ul style="margin-top: 1rem; text-align: left;">
+                    <li>✓ Тестирование навыков</li>
+                    <li>✓ Тактические занятия</li>
+                    <li>✓ Товарищеские матчи</li>
+                    <li>✓ Персональные рекомендации</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="features">
+        <h2 class="section-title">10 причин выбрать нас</h2>
+        <div class="features">
+            <div class="feature-item">
+                <div class="feature-number">🏠</div>
+                <h3>Комфорт</h3>
+                <p>Комфортные условия проживания и качественное питание</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-number">⚽</div>
+                <h3>2 тренировки</h3>
+                <p>Утренняя и вечерняя тренировки каждый день</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-number">🏟️</div>
+                <h3>Поле с покрытием</h3>
+                <p>Выезд на футбольное поле с искусственным покрытием</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-number">🤝</div>
+                <h3>Товарищеские матчи</h3>
+                <p>Игры с командами Дубовки и Волгограда</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-number">🎭</div>
+                <h3>Вожатые</h3>
+                <p>Продуманная программа мероприятий</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-number">👤</div>
+                <h3>Индивидуальный подход</h3>
+                <p>Внимание к каждому ребенку</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-number">🏆</div>
+                <h3>Профессионалы</h3>
+                <p>Квалифицированные тренеры с лицензиями</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-number">💧</div>
+                <h3>Питьевая вода</h3>
+                <p>Всегда в свободном доступе</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-number">👕</div>
+                <h3>Форма в подарок</h3>
+                <p>Комплект тренировочной формы каждому</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-number">🧺</div>
+                <h3>Стирка формы</h3>
+                <p>Мы позаботимся о чистоте</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="price-section">
+        <h2 class="section-title" style="color: white;">Стоимость программы</h2>
+        <div class="price-cards">
+            <div class="price-card">
+                <h3>Путевка в лагерь "Зеленая Волна"</h3>
+                <div class="price-amount">8 400 ₽</div>
+                <p>Проживание и питание (29 июня - 12 июля 2026)</p>
+            </div>
+            <div class="price-card">
+                <h3>Программа "Планета Футбола"</h3>
+                <div class="price-amount">12 300 ₽</div>
+                <p>Тренировки, форма, трансфер на поле, товарищеские матчи</p>
+            </div>
+            <div class="price-card">
+                <h3>Полная программа</h3>
+                <div class="price-amount">20 700 ₽</div>
+                <p>Все включено: проживание, питание, тренировки и форма</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section schedule" id="schedule">
+        <h2 class="section-title">Распорядок дня</h2>
+        <div class="schedule-grid">
+            <div class="schedule-item">
+                <div class="schedule-time">08:00</div>
+                <p>Подъем, утренние процедуры</p>
+            </div>
+            <div class="schedule-item">
+                <div class="schedule-time">09:00</div>
+                <p>Завтрак</p>
+            </div>
+            <div class="schedule-item">
+                <div class="schedule-time">10:00 - 11:30</div>
+                <p>Утренняя тренировка (технико-тактическая)</p>
+            </div>
+            <div class="schedule-item">
+                <div class="schedule-time">12:00</div>
+                <p>Теоретическое занятие / Футбольная викторина</p>
+            </div>
+            <div class="schedule-item">
+                <div class="schedule-time">13:00</div>
+                <p>Обед</p>
+            </div>
+            <div class="schedule-item">
+                <div class="schedule-time">13:30 - 15:00</div>
+                <p>Тихий час / Свободное время</p>
+            </div>
+            <div class="schedule-item">
+                <div class="schedule-time">15:30</div>
+                <p>Полдник</p>
+            </div>
+            <div class="schedule-item">
+                <div class="schedule-time">16:30 - 18:00</div>
+                <p>Вечерняя тренировка (физподготовка + игра)</p>
+            </div>
+            <div class="schedule-item">
+                <div class="schedule-time">19:00</div>
+                <p>Ужин</p>
+            </div>
+            <div class="schedule-item">
+                <div class="schedule-time">19:30</div>
+                <p>Вечерние мероприятия (игры, кино, дискотека)</p>
+            </div>
+            <div class="schedule-item">
+                <div class="schedule-time">22:00</div>
+                <p>Свечка (подведение итогов дня)</p>
+            </div>
+            <div class="schedule-item">
+                <div class="schedule-time">22:15</div>
+                <p>Отбой</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="trainers">
+        <h2 class="section-title">Тренерский состав</h2>
+        <div class="trainers">
+            <div class="trainer-card">
+                <div class="trainer-photo">👨‍🏫</div>
+                <div class="trainer-info">
+                    <h3>Анучин Сергей Юрьевич</h3>
+                    <p style="color: #ff6b35; font-weight: bold;">Главный тренер</p>
+                    <p>Тренер по футболу, лицензия С-UEFA</p>
+                    <p style="margin-top: 1rem;">📞 8 903 316 2827</p>
+                </div>
+            </div>
+            <div class="trainer-card">
+                <div class="trainer-photo">👨‍🏫</div>
+                <div class="trainer-info">
+                    <h3>Анучин Денис Сергеевич</h3>
+                    <p style="color: #ff6b35; font-weight: bold;">Тренер</p>
+                    <p>ВолгГМУ, старший преподаватель кафедры ФВ, тренер женской команды</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <h2 class="section-title" style="color: white;">Контакты и бронирование</h2>
+        <div class="contact-info">
+            <p>📍 Волгоградская область, г. Дубовка</p>
+            <p>База: ГБДОУ ВО «Зеленая волна»</p>
+            <p>📞 Анучин С.Ю.: 8 903 316 2827</p>
+        </div>
+        <button class="cta-button" onclick="openModal()">Оставить заявку</button>
+    </section>
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 style="color: #1e3c72; margin-bottom: 1.5rem;">Забронировать место</h2>
+            <form id="bookingForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Имя ребенка *</label>
+                    <input type="text" id="name" name="name" required placeholder="Введите имя">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон *</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+7 (___) ___-__-__">
+                </div>
+                <button type="submit" class="submit-button">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Футбольный лагерь "Планета футбола". Все права защищены.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function openModal() {
+            document.getElementById('bookingModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookingModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            
+            alert(`Спасибо за заявку!\n\nИмя: ${name}\nТелефон: ${phone}\n\nМы свяжемся с вами в ближайшее время!`);
+            
+            document.getElementById('bookingForm').reset();
+            closeModal();
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                    const navLinks = document.getElementById('navLinks');
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+
+        const phoneInput = document.getElementById('phone');
+        phoneInput.addEventListener('input', function (e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 0) {
+                if (value[0] !== '7') value = '7' + value;
+                let formatted = '+7';
+                if (value.length > 1) formatted += ' (' + value.substring(1, 4);
+                if (value.length >= 5) formatted += ') ' + value.substring(4, 7);
+                if (value.length >= 8) formatted += '-' + value.substring(7, 9);
+                if (value.length >= 10) formatted += '-' + value.substring(9, 11);
+                e.target.value = formatted;
+            }
+        });
+    </script>
+</body>
+</html>
