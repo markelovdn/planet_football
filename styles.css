@@ -52,7 +52,10 @@ nav {
 }
 
 .hero {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3a7bc8 100%);
+    background-image: url('img/hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
     padding: 100px 20px;
     text-align: center;
@@ -63,12 +66,12 @@ nav {
 .hero::before {
     content: '';
     position: absolute;
-    width: 300px;
-    height: 300px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 50%;
-    top: -100px;
-    right: -100px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(30, 60, 114, 0.6);
+    z-index: 0;
 }
 
 .hero::after {
@@ -80,13 +83,14 @@ nav {
     border-radius: 50%;
     bottom: -150px;
     left: -150px;
+    z-index: 0;
 }
 
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .hero h1 {
@@ -129,6 +133,7 @@ nav {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(255,107,53,0.5);
 }
+
 
 .section {
     padding: 80px 20px;
