@@ -5,18 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Летний футбольный лагерь 'Планета футбола' для детей 2013-2016 г.р. в Волгоградской области. Профессиональные тренеры, 2 тренировки в день, товарищеские матчи.">
     <meta name="keywords" content="футбольный лагерь, детский футбол, спортивный лагерь, Волгоград, Дубовка, футбольная школа">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Футбольный лагерь "Планета футбола" | Лето 2026</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">⚽ Планета футбола</div>
+            <div class="logo">
+                <img src="img/logo-sm.png" alt="Планета футбола">
+                <span>Планета футбола</span>
+            </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#programs">Программы</a></li>
                 <li><a href="#features">Особенности</a></li>
                 <li><a href="#schedule">Расписание</a></li>
                 <li><a href="#trainers">Тренеры</a></li>
+                <li><a href="#faq">Вопросы</a></li>
                 <li><a href="#contact">Контакты</a></li>
             </ul>
             <div class="burger" onclick="toggleMenu()">
@@ -30,7 +35,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Планета футбола</h1>
-            <p class="hero-subtitle">Летний лагерь для юных футболистов в живописном месте Волгоградской области</p>
+            <p class="hero-subtitle">Летний лагерь в живописном месте Волгоградской области</p>
             <div class="hero-dates">📅 30 июня - 13 июля 2026</div>
             <p style="margin-bottom: 2rem;">Для детей 2013-2016 г.р.</p>
             <button class="cta-button" onclick="openModal()">Забронировать место</button>
@@ -41,160 +46,411 @@
         <h2 class="section-title">Программы обучения</h2>
         <div class="programs">
             <div class="program-card">
-                <div class="program-icon">🎯</div>
+                <div class="carousel" data-carousel="beginners">
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <img src="img/beginners/beginners-1.jpg" alt="Для начинающих">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="img/beginners/beginners-2.jpg" alt="Для начинающих">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="img/beginners/beginners-3.jpg" alt="Для начинающих">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="img/beginners/beginners-4.jpg" alt="Для начинающих">
+                            </div>
+                        </div>
+                        <button class="carousel-button prev" onclick="carouselPrev('beginners')">‹</button>
+                        <button class="carousel-button next" onclick="carouselNext('beginners')">›</button>
+                    </div>
+                    <div class="carousel-dots" id="dots-beginners"></div>
+                </div>
                 <h3 class="program-title">Для начинающих</h3>
                 <p class="program-motto">"Учимся, играя"</p>
                 <p>Идеально для детей, которые только начинают свой путь в футболе. Базовые технические навыки, игровые упражнения и дружеская атмосфера.</p>
                 <ul style="margin-top: 1rem; text-align: left;">
-                    <li>✓ Основы техники владения мячом</li>
-                    <li>✓ Игры в малых составах</li>
-                    <li>✓ Индивидуальный подход</li>
-                    <li>✓ Позитивная мотивация</li>
+                    <li>Основы техники владения мячом</li>
+                    <li>Игры в малых составах</li>
+                    <li>Индивидуальный подход</li>
+                    <li>Позитивная мотивация</li>
                 </ul>
+                
             </div>
 
             <div class="program-card">
-                <div class="program-icon">⭐</div>
+                <div class="carousel" data-carousel="masters">
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <img src="img/profi/profi-1.jpg" alt="Для продвинутых">
+                            </div>
+                            <div class="carousel-slide">
+                                <video src="img/profi/profi-2.MP4" autoplay muted loop playsinline>
+                                    Ваш браузер не поддерживает видео.
+                                </video>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="img/profi/profi-3.jpg" alt="Для продвинутых">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="img/profi/profi-4.jpg" alt="Для продвинутых">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="img/profi/profi-5.jpg" alt="Для продвинутых">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="img/profi/profi-6.jpg" alt="Для продвинутых">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="img/profi/profi-7.jpg" alt="Для продвинутых">
+                            </div>
+                        </div>
+                        <button class="carousel-button prev" onclick="carouselPrev('masters')">‹</button>
+                        <button class="carousel-button next" onclick="carouselNext('masters')">›</button>
+                    </div>
+                    <div class="carousel-dots" id="dots-masters"></div>
+                </div>
                 <h3 class="program-title">Для продвинутых</h3>
                 <p class="program-motto">"Оттачиваем мастерство, понимаем игру"</p>
                 <p>Для детей, занимающихся в футбольных школах. Углубленная техника, тактическое мышление и товарищеские матчи.</p>
                 <ul style="margin-top: 1rem; text-align: left;">
-                    <li>✓ Тестирование навыков</li>
-                    <li>✓ Тактические занятия</li>
-                    <li>✓ Товарищеские матчи</li>
-                    <li>✓ Персональные рекомендации</li>
+                    <li>Тестирование навыков</li>
+                    <li>Тактические занятия</li>
+                    <li>Товарищеские матчи</li>
+                    <li>Персональные рекомендации</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section class="section" id="features">
-        <h2 class="section-title">10 причин выбрать нас</h2>
+        <h2 class="section-title">Причины выбрать нас</h2>
         <div class="features">
-            <div class="feature-item">
-                <div class="feature-number">🏠</div>
-                <h3>Комфорт</h3>
-                <p>Комфортные условия проживания и качественное питание</p>
+            <div class="feature-item feature-comfort">
+                <div class="comfort-carousel" data-carousel="comfort">
+                    <div class="comfort-carousel-container">
+                        <div class="comfort-carousel-track">
+                            <div class="comfort-carousel-slide">
+                                <img src="img/comfort/comfort-1.jpg" alt="Комфорт" onclick="openImageModal('img/comfort/comfort-1.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>Комфорт</h3>
+                                    <p>Комфортные условия проживания и качественное питание</p>
+                                </div>
+                            </div>
+                            <div class="comfort-carousel-slide">
+                                <img src="img/comfort/comfort-2.jpg" alt="Комфорт" onclick="openImageModal('img/comfort/comfort-2.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>Комфорт</h3>
+                                    <p>Комфортные условия проживания и качественное питание</p>
+                                </div>
+                            </div>
+                            <div class="comfort-carousel-slide">
+                                <img src="img/comfort/comfort-3.jpg" alt="Комфорт" onclick="openImageModal('img/comfort/comfort-3.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>Комфорт</h3>
+                                    <p>Комфортные условия проживания и качественное питание</p>
+                                </div>
+                            </div>
+                            <div class="comfort-carousel-slide">
+                                <img src="img/comfort/comfort-4.jpg" alt="Комфорт" onclick="openImageModal('img/comfort/comfort-4.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>Комфорт</h3>
+                                    <p>Комфортные условия проживания и качественное питание</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="comfort-carousel-button prev" onclick="carouselPrev('comfort')">‹</button>
+                        <button class="comfort-carousel-button next" onclick="carouselNext('comfort')">›</button>
+                    </div>
+                    <div class="comfort-carousel-dots" id="dots-comfort"></div>
+                </div>
             </div>
-            <div class="feature-item">
-                <div class="feature-number">⚽</div>
-                <h3>2 тренировки</h3>
-                <p>Утренняя и вечерняя тренировки каждый день</p>
+            <div class="feature-item feature-trainings">
+                <div class="comfort-carousel" data-carousel="trainings">
+                    <div class="comfort-carousel-container">
+                        <div class="comfort-carousel-track">
+                            <div class="comfort-carousel-slide">
+                                <video src="img/trainings/training-1.MOV" controls muted loop playsinline>
+                                    Ваш браузер не поддерживает видео.
+                                </video>
+                                <div class="comfort-overlay">
+                                    <h3>2 тренировки</h3>
+                                    <p>Утренняя и вечерняя тренировки каждый день</p>
+                                </div>
+                            </div>
+                            <div class="comfort-carousel-slide">
+                                <img src="img/trainings/training-2.jpg" alt="2 тренировки" onclick="openImageModal('img/trainings/training-2.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>2 тренировки</h3>
+                                    <p>Утренняя и вечерняя тренировки каждый день</p>
+                                </div>
+                            </div>
+                            <div class="comfort-carousel-slide">
+                                <img src="img/trainings/training-3.jpg" alt="2 тренировки" onclick="openImageModal('img/trainings/training-3.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>2 тренировки</h3>
+                                    <p>Утренняя и вечерняя тренировки каждый день</p>
+                                </div>
+                            </div>
+                            <div class="comfort-carousel-slide">
+                                <img src="img/trainings/training-4.jpg" alt="2 тренировки" onclick="openImageModal('img/trainings/training-4.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>2 тренировки</h3>
+                                    <p>Утренняя и вечерняя тренировки каждый день</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="comfort-carousel-button prev" onclick="carouselPrev('trainings')">‹</button>
+                        <button class="comfort-carousel-button next" onclick="carouselNext('trainings')">›</button>
+                    </div>
+                    <div class="comfort-carousel-dots" id="dots-trainings"></div>
+                </div>
             </div>
-            <div class="feature-item">
-                <div class="feature-number">🏟️</div>
-                <h3>Поле с покрытием</h3>
-                <p>Выезд на футбольное поле с искусственным покрытием</p>
+            <div class="feature-item feature-field">
+                <div class="comfort-carousel" data-carousel="field">
+                    <div class="comfort-carousel-container">
+                        <div class="comfort-carousel-track">
+                            <div class="comfort-carousel-slide">
+                                <img src="img/field/field-1.jpg" alt="Поле с покрытием" onclick="openImageModal('img/field/field-1.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>Поле с покрытием</h3>
+                                    <p>Выезд на футбольное поле с искусственным покрытием</p>
+                                </div>
+                            </div>
+                            <div class="comfort-carousel-slide">
+                                <img src="img/field/field-2.jpg" alt="Поле с покрытием" onclick="openImageModal('img/field/field-2.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>Поле с покрытием</h3>
+                                    <p>Выезд на футбольное поле с искусственным покрытием</p>
+                                </div>
+                            </div>
+                            <div class="comfort-carousel-slide">
+                                <img src="img/field/field-3.jpg" alt="Поле с покрытием" onclick="openImageModal('img/field/field-3.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>Поле с покрытием</h3>
+                                    <p>Выезд на футбольное поле с искусственным покрытием</p>
+                                </div>
+                            </div>
+                            <div class="comfort-carousel-slide">
+                                <img src="img/field/field-4.jpg" alt="Поле с покрытием" onclick="openImageModal('img/field/field-4.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>Поле с покрытием</h3>
+                                    <p>Выезд на футбольное поле с искусственным покрытием</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="comfort-carousel-button prev" onclick="carouselPrev('field')">‹</button>
+                        <button class="comfort-carousel-button next" onclick="carouselNext('field')">›</button>
+                    </div>
+                    <div class="comfort-carousel-dots" id="dots-field"></div>
+                </div>
             </div>
-            <div class="feature-item">
-                <div class="feature-number">🤝</div>
-                <h3>Товарищеские матчи</h3>
-                <p>Игры с командами Дубовки и Волгограда</p>
+            <div class="feature-item feature-plays">
+                <div class="comfort-carousel" data-carousel="plays">
+                    <div class="comfort-carousel-container">
+                        <div class="comfort-carousel-track">
+                            <div class="comfort-carousel-slide">
+                                <img src="img/plays/plays-1.jpg" alt="Товарищеские матчи" onclick="openImageModal('img/plays/plays-1.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>Товарищеские матчи</h3>
+                                    <p>Игры с командами Дубовки и Волгограда</p>
+                                </div>
+                            </div>
+                            <div class="comfort-carousel-slide">
+                                <img src="img/plays/plays-2.jpg" alt="Товарищеские матчи" onclick="openImageModal('img/plays/plays-2.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>Товарищеские матчи</h3>
+                                    <p>Игры с командами Дубовки и Волгограда</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="comfort-carousel-button prev" onclick="carouselPrev('plays')">‹</button>
+                        <button class="comfort-carousel-button next" onclick="carouselNext('plays')">›</button>
+                    </div>
+                    <div class="comfort-carousel-dots" id="dots-plays"></div>
+                </div>
             </div>
-            <div class="feature-item">
-                <div class="feature-number">🎭</div>
-                <h3>Вожатые</h3>
-                <p>Продуманная программа мероприятий</p>
+            <div class="feature-item feature-counselors">
+                <div class="comfort-carousel" data-carousel="counselors">
+                    <div class="comfort-carousel-container">
+                        <div class="comfort-carousel-track">
+                            <div class="comfort-carousel-slide">
+                                <img src="img/counselors/counselor-1.jpg" alt="Вожатые" onclick="openImageModal('img/counselors/counselor-1.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>Вожатые</h3>
+                                    <p>Продуманная программа мероприятий</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="comfort-carousel-button prev" onclick="carouselPrev('counselors')">‹</button>
+                        <button class="comfort-carousel-button next" onclick="carouselNext('counselors')">›</button>
+                    </div>
+                    <div class="comfort-carousel-dots" id="dots-counselors"></div>
+                </div>
             </div>
-            <div class="feature-item">
-                <div class="feature-number">👤</div>
-                <h3>Индивидуальный подход</h3>
-                <p>Внимание к каждому ребенку</p>
+            <div class="feature-item feature-individual">
+                <div class="comfort-carousel" data-carousel="individual">
+                    <div class="comfort-carousel-container">
+                        <div class="comfort-carousel-track">
+                            <div class="comfort-carousel-slide">
+                                <img src="img/individual/individual-1.jpg" alt="Индивидуальный подход" onclick="openImageModal('img/individual/individual-1.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>Индивидуальный подход</h3>
+                                    <p>Внимание к каждому ребенку</p>
+                                </div>
+                            </div>
+                            <div class="comfort-carousel-slide">
+                                <img src="img/individual/individual-2.jpg" alt="Индивидуальный подход" onclick="openImageModal('img/individual/individual-2.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>Индивидуальный подход</h3>
+                                    <p>Внимание к каждому ребенку</p>
+                                </div>
+                            </div>
+                            <div class="comfort-carousel-slide">
+                                <img src="img/individual/individual-3.jpg" alt="Индивидуальный подход" onclick="openImageModal('img/individual/individual-3.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>Индивидуальный подход</h3>
+                                    <p>Внимание к каждому ребенку</p>
+                                </div>
+                            </div>
+                            <div class="comfort-carousel-slide">
+                                <img src="img/individual/individual-4.jpg" alt="Индивидуальный подход" onclick="openImageModal('img/individual/individual-4.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>Индивидуальный подход</h3>
+                                    <p>Внимание к каждому ребенку</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="comfort-carousel-button prev" onclick="carouselPrev('individual')">‹</button>
+                        <button class="comfort-carousel-button next" onclick="carouselNext('individual')">›</button>
+                    </div>
+                    <div class="comfort-carousel-dots" id="dots-individual"></div>
+                </div>
             </div>
-            <div class="feature-item">
-                <div class="feature-number">🏆</div>
-                <h3>Профессионалы</h3>
-                <p>Квалифицированные тренеры с лицензиями</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-number">💧</div>
-                <h3>Питьевая вода</h3>
-                <p>Всегда в свободном доступе</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-number">👕</div>
-                <h3>Форма в подарок</h3>
-                <p>Комплект тренировочной формы каждому</p>
-            </div>
-            <div class="feature-item">
-                <div class="feature-number">🧺</div>
-                <h3>Стирка формы</h3>
-                <p>Мы позаботимся о чистоте</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="price-section">
-        <h2 class="section-title" style="color: white;">Стоимость программы</h2>
-        <div class="price-cards">
-            <div class="price-card">
-                <h3>Путевка в лагерь "Зеленая Волна"</h3>
-                <div class="price-amount">8 400 ₽</div>
-                <p>Проживание и питание (29 июня - 12 июля 2026)</p>
-            </div>
-            <div class="price-card">
-                <h3>Программа "Планета Футбола"</h3>
-                <div class="price-amount">12 300 ₽</div>
-                <p>Тренировки, форма, трансфер на поле, товарищеские матчи</p>
-            </div>
-            <div class="price-card">
-                <h3>Полная программа</h3>
-                <div class="price-amount">20 700 ₽</div>
-                <p>Все включено: проживание, питание, тренировки и форма</p>
+            <div class="feature-item feature-masters">
+                <div class="comfort-carousel" data-carousel="masters-feature">
+                    <div class="comfort-carousel-container">
+                        <div class="comfort-carousel-track">
+                            <div class="comfort-carousel-slide">
+                                <img src="img/masters/master-1.jpg" alt="Профессионалы" onclick="openImageModal('img/masters/master-1.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>Профессионалы</h3>
+                                    <p>Квалифицированные тренеры с лицензиями</p>
+                                </div>
+                            </div>
+                            <div class="comfort-carousel-slide">
+                                <img src="img/masters/master-2.jpg" alt="Профессионалы" onclick="openImageModal('img/masters/master-2.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>Профессионалы</h3>
+                                    <p>Квалифицированные тренеры с лицензиями</p>
+                                </div>
+                            </div>
+                            <div class="comfort-carousel-slide">
+                                <img src="img/masters/master-3.jpg" alt="Профессионалы" onclick="openImageModal('img/masters/master-3.jpg')">
+                                <div class="comfort-overlay">
+                                    <h3>Профессионалы</h3>
+                                    <p>Квалифицированные тренеры с лицензиями</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="comfort-carousel-button prev" onclick="carouselPrev('masters-feature')">‹</button>
+                        <button class="comfort-carousel-button next" onclick="carouselNext('masters-feature')">›</button>
+                    </div>
+                    <div class="comfort-carousel-dots" id="dots-masters-feature"></div>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="section schedule" id="schedule">
         <h2 class="section-title">Распорядок дня</h2>
-        <div class="schedule-grid">
-            <div class="schedule-item">
-                <div class="schedule-time">08:00</div>
-                <p>Подъем, утренние процедуры</p>
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">08:00</div>
+                    <p>Подъем, утренние процедуры</p>
+                </div>
             </div>
-            <div class="schedule-item">
-                <div class="schedule-time">09:00</div>
-                <p>Завтрак</p>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">09:00</div>
+                    <p>Завтрак</p>
+                </div>
             </div>
-            <div class="schedule-item">
-                <div class="schedule-time">10:00 - 11:30</div>
-                <p>Утренняя тренировка (технико-тактическая)</p>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">10:00 - 11:30</div>
+                    <p>Утренняя тренировка (технико-тактическая)</p>
+                </div>
             </div>
-            <div class="schedule-item">
-                <div class="schedule-time">12:00</div>
-                <p>Теоретическое занятие / Футбольная викторина</p>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">12:00</div>
+                    <p>Теоретическое занятие / Футбольная викторина</p>
+                </div>
             </div>
-            <div class="schedule-item">
-                <div class="schedule-time">13:00</div>
-                <p>Обед</p>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">13:00</div>
+                    <p>Обед</p>
+                </div>
             </div>
-            <div class="schedule-item">
-                <div class="schedule-time">13:30 - 15:00</div>
-                <p>Тихий час / Свободное время</p>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">13:30 - 15:00</div>
+                    <p>Тихий час / Свободное время</p>
+                </div>
             </div>
-            <div class="schedule-item">
-                <div class="schedule-time">15:30</div>
-                <p>Полдник</p>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">15:30</div>
+                    <p>Полдник</p>
+                </div>
             </div>
-            <div class="schedule-item">
-                <div class="schedule-time">16:30 - 18:00</div>
-                <p>Вечерняя тренировка (физподготовка + игра)</p>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">16:30 - 18:00</div>
+                    <p>Вечерняя тренировка (физподготовка + игра)</p>
+                </div>
             </div>
-            <div class="schedule-item">
-                <div class="schedule-time">19:00</div>
-                <p>Ужин</p>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">19:00</div>
+                    <p>Ужин</p>
+                </div>
             </div>
-            <div class="schedule-item">
-                <div class="schedule-time">19:30</div>
-                <p>Вечерние мероприятия (игры, кино, дискотека)</p>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">19:30</div>
+                    <p>Вечерние мероприятия (игры, кино, дискотека)</p>
+                </div>
             </div>
-            <div class="schedule-item">
-                <div class="schedule-time">22:00</div>
-                <p>Свечка (подведение итогов дня)</p>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">22:00</div>
+                    <p>Свечка (подведение итогов дня)</p>
+                </div>
             </div>
-            <div class="schedule-item">
-                <div class="schedule-time">22:15</div>
-                <p>Отбой</p>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-time">22:15</div>
+                    <p>Отбой</p>
+                </div>
             </div>
         </div>
     </section>
@@ -203,20 +459,79 @@
         <h2 class="section-title">Тренерский состав</h2>
         <div class="trainers">
             <div class="trainer-card">
-                <div class="trainer-photo">👨‍🏫</div>
                 <div class="trainer-info">
                     <h3>Анучин Сергей Юрьевич</h3>
                     <p style="color: #ff6b35; font-weight: bold;">Главный тренер</p>
                     <p>Тренер по футболу, лицензия С-UEFA</p>
+                    <p>Педагогический стаж более 30 лет</p>
                     <p style="margin-top: 1rem;">📞 8 903 316 2827</p>
                 </div>
             </div>
             <div class="trainer-card">
-                <div class="trainer-photo">👨‍🏫</div>
                 <div class="trainer-info">
                     <h3>Анучин Денис Сергеевич</h3>
                     <p style="color: #ff6b35; font-weight: bold;">Тренер</p>
                     <p>ВолгГМУ, старший преподаватель кафедры ФВ, тренер женской команды</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section faq-section" id="faq">
+        <h2 class="section-title">Часто задаваемые вопросы</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Как обеспечивается безопасность детей в лагере?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Безопасность детей — наш приоритет. Лагерь находится на охраняемой территории базы ГБДОУ ВО «Зеленая волна». Дети находятся под постоянным присмотром опытных тренеров и вожатых. Все тренировки проводятся с соблюдением техники безопасности, используется качественное спортивное оборудование. Перед началом смены проводится инструктаж по правилам поведения и безопасности.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Какое медицинское обслуживание доступно в лагере?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>На территории базы есть медицинский пункт с дежурным медицинским работником. В случае необходимости оказывается первая помощь, при серьезных ситуациях обеспечивается оперативная доставка в ближайшее медицинское учреждение. Перед заездом родители предоставляют информацию о состоянии здоровья ребенка и особенностях, которые необходимо учитывать.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Как организовано питание детей?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Питание организовано в столовой базы по утвержденному меню, соответствующему санитарным нормам для детских лагерей. В день предусмотрено 5 приемов пищи: завтрак, обед, полдник, ужин и второй ужин. Меню сбалансировано и учитывает потребности растущего организма и физические нагрузки. При необходимости учитываются индивидуальные особенности питания ребенка (аллергии, диеты).</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Доступна ли питьевая вода в лагере?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Да, питьевая вода доступна круглосуточно. В корпусах и на территории лагеря установлены кулеры с чистой питьевой водой. Во время тренировок детям предоставляется вода для питья. Мы следим за тем, чтобы дети регулярно пили воду, особенно в жаркую погоду и после физических нагрузок.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Предоставляется ли услуга стирки одежды?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Да, в лагере доступна стирка одежды. На территории базы есть прачечная, где можно постирать детскую одежду. Родители могут передать грязное белье для стирки, либо стирка может быть организована в течение смены по необходимости. Это позволяет детям всегда иметь чистую и свежую одежду на протяжении всего пребывания в лагере.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">
+                    <span>Как можно связаться с ребенком во время смены?</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Родители могут связаться с ребенком через тренеров и вожатых. Контактный телефон главного тренера: 8 903 316 2827. Также можно связаться с администрацией базы. Мы рекомендуем заранее обсудить с ребенком правила использования мобильного телефона, если он берет его с собой. В лагере есть распорядок дня, и для звонков выделено специальное время, чтобы не мешать тренировкам и отдыху.</p>
                 </div>
             </div>
         </div>
@@ -250,6 +565,13 @@
         </div>
     </div>
 
+    <div id="imageModal" class="modal">
+        <div class="image-modal-content">
+            <span class="close" onclick="closeImageModal()">&times;</span>
+            <img id="modalImage" src="" alt="Увеличенное изображение">
+        </div>
+    </div>
+
     <footer>
         <p>&copy; 2026 Футбольный лагерь "Планета футбола". Все права защищены.</p>
     </footer>
@@ -270,10 +592,28 @@
             document.body.style.overflow = 'auto';
         }
 
+        function openDetailsModal() {
+            document.getElementById('detailsModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeDetailsModal() {
+            document.getElementById('detailsModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
         window.onclick = function(event) {
-            const modal = document.getElementById('bookingModal');
-            if (event.target == modal) {
+            const bookingModal = document.getElementById('bookingModal');
+            const imageModal = document.getElementById('imageModal');
+            const detailsModal = document.getElementById('detailsModal');
+            if (event.target == bookingModal) {
                 closeModal();
+            }
+            if (event.target == imageModal) {
+                closeImageModal();
+            }
+            if (event.target == detailsModal) {
+                closeDetailsModal();
             }
         }
 
@@ -286,6 +626,18 @@
             
             document.getElementById('bookingForm').reset();
             closeModal();
+        }
+
+        function handleDetailsSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('details-name').value;
+            const phone = document.getElementById('details-phone').value;
+            const message = document.getElementById('details-message').value;
+            
+            alert(`Спасибо за обращение!\n\nИмя: ${name}\nТелефон: ${phone}\n${message ? 'Вопрос: ' + message + '\n' : ''}\nМы свяжемся с вами в ближайшее время!`);
+            
+            document.getElementById('detailsForm').reset();
+            closeDetailsModal();
         }
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -312,6 +664,143 @@
                 if (value.length >= 10) formatted += '-' + value.substring(9, 11);
                 e.target.value = formatted;
             }
+        });
+
+        const detailsPhoneInput = document.getElementById('details-phone');
+        if (detailsPhoneInput) {
+            detailsPhoneInput.addEventListener('input', function (e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 0) {
+                    if (value[0] !== '7') value = '7' + value;
+                    let formatted = '+7';
+                    if (value.length > 1) formatted += ' (' + value.substring(1, 4);
+                    if (value.length >= 5) formatted += ') ' + value.substring(4, 7);
+                    if (value.length >= 8) formatted += '-' + value.substring(7, 9);
+                    if (value.length >= 10) formatted += '-' + value.substring(9, 11);
+                    e.target.value = formatted;
+                }
+            });
+        }
+
+        const carouselState = {};
+
+        function initCarousel(carouselId) {
+            const carousel = document.querySelector(`[data-carousel="${carouselId}"]`);
+            if (!carousel) return;
+
+            const isComfort = carouselId === 'comfort' || carouselId === 'trainings' || carouselId === 'field' || carouselId === 'plays' || carouselId === 'counselors' || carouselId === 'individual' || carouselId === 'masters-feature';
+            const trackSelector = isComfort ? '.comfort-carousel-track' : '.carousel-track';
+            const slideSelector = isComfort ? '.comfort-carousel-slide' : '.carousel-slide';
+            const dotsSelector = isComfort ? '.comfort-carousel-dots' : '.carousel-dots';
+            const dotClass = isComfort ? 'comfort-carousel-dot' : 'carousel-dot';
+
+            const track = carousel.querySelector(trackSelector);
+            if (!track) return;
+
+            const slides = track.querySelectorAll(slideSelector);
+            const dotsContainer = carousel.querySelector(dotsSelector);
+
+            if (!carouselState[carouselId]) {
+                carouselState[carouselId] = {
+                    currentIndex: 0,
+                    totalSlides: slides.length
+                };
+            }
+
+            if (dotsContainer) {
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < slides.length; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = dotClass + (i === 0 ? ' active' : '');
+                    dot.setAttribute('aria-label', `Перейти к слайду ${i + 1}`);
+                    dot.onclick = () => goToSlide(carouselId, i);
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            updateCarousel(carouselId);
+        }
+
+        function updateCarousel(carouselId) {
+            const state = carouselState[carouselId];
+            if (!state) return;
+
+            const carousel = document.querySelector(`[data-carousel="${carouselId}"]`);
+            if (!carousel) return;
+
+            const isComfort = carouselId === 'comfort' || carouselId === 'trainings' || carouselId === 'field' || carouselId === 'plays' || carouselId === 'counselors' || carouselId === 'individual' || carouselId === 'masters-feature';
+            const trackSelector = isComfort ? '.comfort-carousel-track' : '.carousel-track';
+            const dotSelector = isComfort ? '.comfort-carousel-dot' : '.carousel-dot';
+
+            const track = carousel.querySelector(trackSelector);
+            if (!track) return;
+
+            track.style.transform = `translateX(-${state.currentIndex * 100}%)`;
+
+            const dots = carousel.querySelectorAll(dotSelector);
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === state.currentIndex);
+            });
+        }
+
+        function carouselNext(carouselId) {
+            const state = carouselState[carouselId];
+            if (!state) return;
+
+            state.currentIndex = (state.currentIndex + 1) % state.totalSlides;
+            updateCarousel(carouselId);
+        }
+
+        function carouselPrev(carouselId) {
+            const state = carouselState[carouselId];
+            if (!state) return;
+
+            state.currentIndex = (state.currentIndex - 1 + state.totalSlides) % state.totalSlides;
+            updateCarousel(carouselId);
+        }
+
+        function goToSlide(carouselId, index) {
+            const state = carouselState[carouselId];
+            if (!state) return;
+
+            state.currentIndex = index;
+            updateCarousel(carouselId);
+        }
+
+        function openImageModal(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('imageModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeImageModal() {
+            document.getElementById('imageModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+            
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initCarousel('beginners');
+            initCarousel('masters');
+            initCarousel('comfort');
+            initCarousel('trainings');
+            initCarousel('field');
+            initCarousel('plays');
+            initCarousel('counselors');
+            initCarousel('individual');
+            initCarousel('masters-feature');
         });
     </script>
 </body>
