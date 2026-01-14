@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug anuchin-football.local",
+            "type": "php",
+            "request": "launch",
+            "port": 9003,
+            "pathMappings": {
+                "/home/dmitriy/www/anuchin_footbal_coach": "${workspaceFolder}"
+            }
+        }
+    ]
+}
