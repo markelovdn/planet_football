@@ -637,7 +637,7 @@
             formData.append('name', name);
             formData.append('phone', phone);
 
-            fetch('http://anuchin-football.local/server/send-email.php', {
+            fetch('/server/send-email.php', {
                 method: 'POST',
                 body: formData
             })
