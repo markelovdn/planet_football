@@ -13,11 +13,13 @@ header('Content-Type: application/json');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = isset($_POST['name']) ? trim($_POST['name']) : '';
+    $childBirthYear = isset($_POST['childBirthYear']) ? trim($_POST['childBirthYear']) : '';
     $phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
+    $privacyConsent = isset($_POST['privacyConsent']) ? $_POST['privacyConsent'] : 'false';
 
-    if (empty($name) || empty($phone)) {
+    if (empty($name) || empty($phone) || $privacyConsent !== 'true') {
         http_response_code(400);
-        echo json_encode(['error' => 'Имя и телефон обязательны']);
+        echo json_encode(['error' => 'Имя родителя, телефон и согласие с политикой обработки персональных данных обязательны']);
         exit;
     }
 
@@ -38,8 +40,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $mail->Subject = 'Новая заявка с сайта "Планета футбола"';
         $mail->Body = "Новая заявка на бронирование места в футбольном лагере\n\n" .
-                      "Имя ребенка: " . $name . "\n" .
+                      "Имя родителя: " . $name . "\n" .
+                      "Год рождения ребенка: " . $childBirthYear . "\n" .
                       "Телефон: " . $phone . "\n" .
+                      "Согласие с политикой обработки персональных данных: " . ($privacyConsent === 'true' ? 'Да' : 'Нет') . "\n" .
                       "Дата заявки: " . date('d.m.Y H:i:s') . "\n";
 
         $mail->send();

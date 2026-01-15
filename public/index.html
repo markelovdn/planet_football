@@ -553,8 +553,12 @@
             <h2 style="color: #1e3c72; margin-bottom: 1.5rem;">Забронировать место</h2>
             <form id="bookingForm" onsubmit="handleSubmit(event)">
                 <div class="form-group">
-                    <label for="name">Имя ребенка *</label>
+                    <label for="name">Имя родителя *</label>
                     <input type="text" id="name" name="name" required placeholder="Введите имя">
+                </div>
+                <div class="form-group">
+                    <label for="child-birth-year">Год рождения ребенка *</label>
+                    <input type="number" id="child-birth-year" name="child-birth-year" required min="2013" max="2016" placeholder="Например, 2014"> 
                 </div>
                 <div class="form-group">
                     <label for="phone">Телефон *</label>
@@ -631,11 +635,14 @@
             }
 
             const name = document.getElementById('name').value;
+            const childBirthYear = document.getElementById('child-birth-year').value;
             const phone = document.getElementById('phone').value;
             
             const formData = new FormData();
             formData.append('name', name);
+            formData.append('childBirthYear', childBirthYear);
             formData.append('phone', phone);
+            formData.append('privacyConsent', privacyConsent);
 
             fetch('/server/send-email.php', {
                 method: 'POST',
@@ -644,7 +651,7 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    alert(`Спасибо за заявку!\n\nИмя: ${name}\nТелефон: ${phone}\n\nМы свяжемся с вами в ближайшее время!`);
+                    alert(`Спасибо за заявку!\n\nИмя родителя: ${name}\nГод рождения ребенка: ${childBirthYear}\nТелефон: ${phone}\nСогласие с политикой: ${privacyConsent ? 'Да' : 'Нет'}\n\nМы свяжемся с вами в ближайшее время!`);
                     document.getElementById('bookingForm').reset();
                     closeModal();
                 } else {
@@ -684,6 +691,9 @@
         const phoneInput = document.getElementById('phone');
         phoneInput.addEventListener('input', function (e) {
             let value = e.target.value.replace(/\D/g, '');
+            if (value.startsWith('8')) {
+                value = value.substring(1);
+            }
             if (value.length > 0) {
                 if (value[0] !== '7') value = '7' + value;
                 let formatted = '+7';
@@ -692,6 +702,8 @@
                 if (value.length >= 8) formatted += '-' + value.substring(7, 9);
                 if (value.length >= 10) formatted += '-' + value.substring(9, 11);
                 e.target.value = formatted;
+            } else {
+                e.target.value = '';
             }
         });
 
