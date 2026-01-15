@@ -47,9 +47,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                       "Дата заявки: " . date('d.m.Y H:i:s') . "\n";
 
         $mail->send();
+        $logMessage = date('[Y-m-d H:i:s]') . ' - Телефон: ' . $phone . ' - Статус: Успешно отправлено\n';
+        file_put_contents('send-mail.log', $logMessage, FILE_APPEND);
         http_response_code(200);
         echo json_encode(['success' => true]);
     } catch (Exception $e) {
+        $logMessage = date('[Y-m-d H:i:s]') . ' - Телефон: ' . $phone . ' - Статус: Ошибка отправки - ' . $mail->ErrorInfo . '\n';
+        file_put_contents('send-mail.log', $logMessage, FILE_APPEND);
         http_response_code(500);
         echo json_encode(['error' => 'Ошибка отправки: ' . $mail->ErrorInfo]);
     }
