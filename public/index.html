@@ -566,7 +566,7 @@
                 </div>
                 <div class="form-group privacy-checkbox">
                     <input type="checkbox" id="privacyConsent" name="privacyConsent" required>
-                    <label for="privacyConsent">Я согласен с <a href="privacy-policy.html" target="_blank">политикой обработки персональных данных</a> *</label>
+                    <label for="privacyConsent">Я согласен с <a href="#" onclick="openPrivacyPolicyModal(event)">политикой обработки персональных данных</a> *</label>
                 </div>
                 <button type="submit" class="submit-button">Отправить заявку</button>
             </form>
@@ -577,6 +577,13 @@
         <div class="image-modal-content">
             <span class="close" onclick="closeImageModal()">&times;</span>
             <img id="modalImage" src="" alt="Увеличенное изображение">
+        </div>
+    </div>
+
+    <div id="privacyPolicyModal" class="modal">
+        <div class="modal-content privacy-modal-content">
+            <span class="close" onclick="closePrivacyPolicyModal()">&times;</span>
+            <iframe src="privacy-policy.html" style="width:100%; height:100%; border:none;"></iframe>
         </div>
     </div>
 
@@ -610,10 +617,23 @@
             document.body.style.overflow = 'auto';
         }
 
+        function openPrivacyPolicyModal(event) {
+            event.preventDefault();
+            document.getElementById('privacyPolicyModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePrivacyPolicyModal() {
+            document.getElementById('privacyPolicyModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
         window.onclick = function(event) {
             const bookingModal = document.getElementById('bookingModal');
             const imageModal = document.getElementById('imageModal');
             const detailsModal = document.getElementById('detailsModal');
+            const privacyPolicyModal = document.getElementById('privacyPolicyModal');
+
             if (event.target == bookingModal) {
                 closeModal();
             }
@@ -622,6 +642,9 @@
             }
             if (event.target == detailsModal) {
                 closeDetailsModal();
+            }
+            if (event.target == privacyPolicyModal) {
+                closePrivacyPolicyModal();
             }
         }
 

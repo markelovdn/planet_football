@@ -629,6 +629,34 @@ nav {
     animation: slideIn 0.3s;
 }
 
+.privacy-modal-content {
+    max-width: 800px;
+    overflow-y: hidden;
+    height: 90vh;
+}
+
+.privacy-modal-content h3 {
+    color: #1e3c72;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.privacy-modal-content p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.privacy-modal-content ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.privacy-modal-content ul li {
+    margin-bottom: 0.5rem;
+}
+
+
 .close {
     color: #aaa;
     float: right;
@@ -1035,4 +1063,38 @@ footer {
 
 .privacy-checkbox a:hover {
     color: #2a5298;
+}
+
+/* New styles for privacy policy modal */
+.privacy-modal-content {
+    max-width: 800px;
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+.privacy-modal-content h3 {
+    color: #1e3c72;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+}
+
+.privacy-modal-content p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+.privacy-modal-content ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.privacy-modal-content ul li {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 480px) {
+    .modal-content.privacy-modal-content {
+        margin: 10% auto;
+    }
 }
